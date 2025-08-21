@@ -2,7 +2,6 @@
 layout: default
 title: "ToolsClouds - The Ultimate Suite of Free Online Tools"
 description: "Discover hundreds of free, fast, and user-friendly online tools. From calculators and converters and generators, ToolsClouds is your all-in-one solution for every need."
-permalink: /calculators/
 ---
 
 <style>
