@@ -1,0 +1,16 @@
+# Jekyll & Sass caches
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Vendor & dependencies
+vendor/
+node_modules/
+
+# Build output (GitHub Pages builds _site automatically)
+_site/
+
+# OS & Editor junk files
+.DS_Store
+Thumbs.db
+*.log
