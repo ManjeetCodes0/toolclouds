@@ -1,5 +1,5 @@
 ---
-title: "Responsive BMI Calculator"
+title: "BMI Calculator"
 layout: tool
 categories: [calculators, health]
 permalink: /calculators/health/bmi-calculator/
