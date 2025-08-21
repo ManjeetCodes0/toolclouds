@@ -1,7 +1,7 @@
 title: "ToolsClouds"
 description: "All-in-one online calculators, converters, and generators"
-url: "https://manjeetcodes0.github.io"
-baseurl: "/toolclouds"
+url: "https://toolclouds.com/"
+baseurl: ""
 
 collections:
   tools:
