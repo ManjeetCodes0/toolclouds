@@ -196,11 +196,12 @@ description: "Browse our comprehensive collection of free online calculators, or
             <p class="card-description">Monitor your health and fitness goals with these calculators.</p>
             <hr class="card-separator">
             <ul class="tool-list">
-                <li><a href="#">BMI Calculator</a></li>
-                <li><a href="#">Calorie Calculator</a></li>
-                <li><a href="#">Body Fat Calculator</a></li>
-                <li><a href="#">Heart Rate Zones</a></li>
+                {% assign health_tools = site.tools | where_exp:"item","item.categories contains 'health'" %}
+                {% for tool in health_tools %}
+                <li><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></li>
+                {% endfor %}
             </ul>
+
         </article>
 
         <article class="tool-card" style="transition-delay: 0ms;">
