@@ -1,6 +1,8 @@
 ---
 title: "BMI Calculator"
-categories: calculators/health
+categories: [calculators, health]
+permalink: /calculators/health/bmi-calculator/
+layout: tool
 ---
 
 <h2>BMI Calculator</h2>
