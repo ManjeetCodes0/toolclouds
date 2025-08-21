@@ -247,7 +247,7 @@ h1, h2, h3, h4 {
                         <li><a href="#">Percentage Calculator</a></li>
                     </ul>
                 </div>
-                <a href="/calculators/" class="card-button">View All Calculators</a>
+                <a href="{{ site.baseurl }}/calculators/" class="card-button">View All Calculators</a>
             </article>
 
             <article class="category-card" data-aos="fade-up" data-aos-delay="100">
@@ -265,7 +265,7 @@ h1, h2, h3, h4 {
                         <li><a href="#">Temperature Converter</a></li>
                     </ul>
                 </div>
-                <a href="/converters/" class="card-button">View All Converters</a>
+                <a href="{{ site.baseurl }}/converters/" class="card-button">View All Converters</a>
             </article>
 
             <article class="category-card" data-aos="fade-up" data-aos-delay="200">
@@ -283,7 +283,7 @@ h1, h2, h3, h4 {
                         <li><a href="#">UUID Generator</a></li>
                     </ul>
                 </div>
-                <a href="/generators/" class="card-button">View All Generators</a>
+                <a href="{{ site.baseurl }}/generators/" class="card-button">View All Generators</a>
             </article>
         </div>
     </section>
