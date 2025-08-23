@@ -1,63 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+<header class="site-header">
+    <div class="header-container">
+        <a href="/" class="logo">
+            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            </svg>
+            <span>ToolClouds</span>
+        </a>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="/" class="nav-link" aria-current="page"><i
+                            class="fas fa-home"></i><span>Home</span></a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active"><i class="fas fa-tools"></i><span>Tools</span></a>
+                    <div class="dropdown-menu">
+                        <a href="/calculators" class="dropdown-item"><i
+                                class="fas fa-calculator"></i><span>Calculators</span></a>
+                        <a href="/converters" class="dropdown-item"><i
+                                class="fas fa-exchange-alt"></i><span>Converters</span></a>
+                        <a href="/generators" class="dropdown-item"><i
+                                class="fas fa-cog"></i><span>Generators</span></a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="/blog" class="nav-link"><i class="fas fa-blog"></i><span>Blog</span></a>
+                </li>
+                <li class="nav-item"><a href="/" class="nav-link"><i
+                            class="fas fa-envelope"></i><span>Contact</span></a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggler" id="js-nav-toggler">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToolClouds Pro Navbar - Redesigned</title>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-</head>
-
-<body>
-    <header class="site-header">
-        <div class="header-container">
-            <a href="/" class="logo">
-                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-                </svg>
-                <span>ToolClouds</span>
-            </a>
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="/" class="nav-link" aria-current="page"><i
-                                class="fas fa-home"></i><span>Home</span></a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link active"><i class="fas fa-tools"></i><span>Tools</span></a>
-                        <div class="dropdown-menu">
-                            <a href="/calculators" class="dropdown-item"><i
-                                    class="fas fa-calculator"></i><span>Calculators</span></a>
-                            <a href="/converters" class="dropdown-item"><i
-                                    class="fas fa-exchange-alt"></i><span>Converters</span></a>
-                            <a href="/generators" class="dropdown-item"><i class="fas fa-cog"></i><span>Generators</span></a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a href="/blog" class="nav-link"><i class="fas fa-blog"></i><span>Blog</span></a>
-                    </li>
-                    <li class="nav-item"><a href="/" class="nav-link"><i
-                                class="fas fa-envelope"></i><span>Contact</span></a></li>
-                </ul>
-            </nav>
-            <button class="nav-toggler" id="js-nav-toggler">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
-
-    <nav class="mobile-nav" id="js-mobile-nav">
-        <ul class="mobile-nav-list">
-            <li><a href="/" class="mobile-nav-link">Home</a></li>
-            <li><a href="/calculators" class="mobile-nav-link">Calculators</a></li>
-            <li><a href="/convertors" class="mobile-nav-link">Converters</a></li>
-            <li><a href="/generators" class="mobile-nav-link">Generators</a></li>
-            <li><a href="/blog" class="mobile-nav-link">Blog</a></li>
-            <li><a href="/" class="mobile-nav-link">Contact</a></li>
-        </ul>
-    </nav>
-
-</body>
-
-</html>
+<nav class="mobile-nav" id="js-mobile-nav">
+    <ul class="mobile-nav-list">
+        <li><a href="/" class="mobile-nav-link">Home</a></li>
+        <li><a href="/calculators" class="mobile-nav-link">Calculators</a></li>
+        <li><a href="/converters" class="mobile-nav-link">Converters</a></li>
+        <li><a href="/generators" class="mobile-nav-link">Generators</a></li>
+        <li><a href="/blog" class="mobile-nav-link">Blog</a></li>
+        <li><a href="/" class="mobile-nav-link">Contact</a></li>
+    </ul>
+</nav>
