@@ -4,213 +4,6 @@ title: "ToolsClouds - The Ultimate Suite of Free Online Tools"
 description: "Discover hundreds of free, fast, and user-friendly online tools. From calculators and converters and generators, ToolsClouds is your all-in-one solution for every need."
 ---
 
-<style>
-/* --- FONT IMPORT --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-/* --- CSS VARIABLES & ROOT STYLES --- */
-:root {
-    --color-primary: #5A67D8; /* Indigo */
-    --color-primary-dark: #434190;
-    --color-secondary: #2D3748; /* Dark Gray */
-    --color-heading: #1A202C; /* Almost Black */
-    --color-body-text: #4A5568;
-    --color-background: #F7FAFC;
-    --color-white: #FFFFFF;
-    --color-border: #E2E8F0;
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --container-width: 1200px;
-    --border-radius: 12px;
-}
-
-/* --- GENERAL BODY & TYPOGRAPHY --- */
-html { scroll-behavior: smooth; }
-body {
-    font-family: var(--font-family);
-    background-color: var(--color-background);
-    color: var(--color-body-text);
-    line-height: 1.7;
-}
-h1, h2, h3, h4 {
-    color: var(--color-heading);
-    font-weight: 700;
-    line-height: 1.3;
-}
-.section-container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 80px 20px;
-}
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-.section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-.section-header p {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-    color: var(--color-secondary);
-}
-
-/* --- HERO SECTION --- */
-.hero-section {
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: var(--color-white);
-    text-align: center;
-    /* FIX: Removed bottom margin to eliminate space */
-}
-.hero-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--color-white);
-}
-.hero-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-    margin-bottom: 2.5rem;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- SEARCH BAR --- */
-.search-container {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-}
-.search-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-#toolSearch {
-    width: 100%;
-    padding: 18px 60px 18px 25px;
-    border: 1px solid transparent;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    box-shadow: var(--shadow-lg);
-    outline: none;
-    transition: all 0.3s ease;
-}
-#toolSearch:focus {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 4px rgba(90, 103, 216, 0.3);
-}
-.search-wrapper svg { position: absolute; right: 25px; width: 24px; height: 24px; color: #9CA3AF; }
-.search-results {
-    position: absolute; width: 100%; background: var(--color-white); border-radius: var(--border-radius);
-    margin-top: 10px; box-shadow: var(--shadow-md); overflow: hidden; max-height: 300px;
-    overflow-y: auto; text-align: left; display: none; z-index: 10;
-}
-.search-results a {
-    display: block; padding: 15px 25px; color: var(--color-body-text);
-    text-decoration: none; transition: background-color 0.2s ease;
-}
-.search-results a:hover { background-color: #f0f2f5; }
-
-/* --- CATEGORIES SECTION --- */
-.categories-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
-.category-card {
-    background-color: var(--color-white); border: 1px solid var(--color-border);
-    border-radius: var(--border-radius); padding: 30px; display: flex; flex-direction: column;
-    box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; position: relative;
-}
-.category-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
-.card-icon {
-    width: 60px; height: 60px; display: grid; place-items: center; border-radius: 12px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: var(--color-white); margin-bottom: 20px;
-}
-.card-icon svg { width: 32px; height: 32px; }
-.card-title { font-size: 1.75rem; color: var(--color-heading); margin-bottom: 10px; }
-.card-description { flex-grow: 1; }
-.featured-tools h4 { margin-top: 20px; margin-bottom: 10px; color: var(--color-heading); }
-.featured-tools ul { list-style: none; padding: 0; margin: 0 0 25px 0; }
-.featured-tools li { padding: 4px 0; }
-.featured-tools li a { text-decoration: none; color: var(--color-primary); font-weight: 500; }
-.featured-tools li a:hover { text-decoration: underline; }
-.card-button {
-    background-color: var(--color-primary); color: var(--color-white); padding: 12px 20px;
-    border-radius: 8px; text-align: center; text-decoration: none; font-weight: 500;
-    margin-top: auto; transition: background-color 0.3s ease;
-}
-.card-button:hover { background-color: var(--color-primary-dark); }
-
-/* --- POPULAR TOOLS SECTION --- */
-.popular-tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-}
-.popular-tool-card {
-    display: flex; flex-direction: column; background-color: var(--color-white);
-    border: 1px solid var(--color-border); border-radius: var(--border-radius); padding: 25px;
-    text-decoration: none; box-shadow: var(--shadow-sm);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-.popular-tool-card:hover {
-    transform: translateY(-5px); box-shadow: var(--shadow-md);
-    border-color: var(--color-primary);
-}
-.popular-tool-card h3 { font-size: 1.25rem; color: var(--color-heading); margin: 0 0 10px 0; }
-.popular-tool-card p {
-    color: var(--color-body-text); font-size: 0.95rem; margin: 0;
-    flex-grow: 1;
-}
-.popular-tool-link {
-    color: var(--color-primary); font-weight: 600; margin-top: 20px;
-    text-decoration: none; align-self: flex-start;
-}
-
-/* --- FEATURES SECTION ("Why Choose Us?") --- */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-.feature-item { text-align: center; padding: 20px; }
-.feature-icon {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 64px; height: 64px; border-radius: 50%; background-color: #E9D8FD;
-    color: var(--color-primary); margin-bottom: 20px;
-}
-.feature-icon svg { width: 32px; height: 32px; }
-.feature-item h3 { font-size: 1.25rem; margin-bottom: 10px; }
-
-/* --- FAQ SECTION --- */
-.faq-container { max-width: 800px; margin: 0 auto; }
-.faq-item { border-bottom: 1px solid var(--color-border); }
-.faq-question {
-    width: 100%; background: none; border: none; text-align: left; padding: 20px 0;
-    font-size: 1.1rem; font-weight: 600; color: var(--color-heading); cursor: pointer;
-    display: flex; justify-content: space-between; align-items: center;
-}
-.faq-question::after { content: '+'; font-size: 1.5rem; transition: transform 0.3s ease; }
-.faq-item.active .faq-question::after { transform: rotate(45deg); }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out, padding 0.4s ease; }
-.faq-answer p { padding-bottom: 20px; }
-
-/* --- ANIMATION ON SCROLL --- */
-[data-aos] {
-    opacity: 0;
-    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-[data-aos="fade-up"].aos-animate { transform: translateY(0); opacity: 1; }
-</style>
-
 <main>
     <section class="hero-section" aria-labelledby="hero-title">
         <div class="hero-content">
@@ -241,13 +34,13 @@ h1, h2, h3, h4 {
                 <div class="featured-tools">
                     <h4>Featured Tools:</h4>
                     <ul>
-                        <li><a href="#">BMI Calculator</a></li>
-                        <li><a href="#">Loan Calculator</a></li>
-                        <li><a href="#">Age Calculator</a></li>
-                        <li><a href="#">Percentage Calculator</a></li>
+                        <li><a href="{{ site.url }}/calculators/health/bmi-calculator/">BMI Calculator</a></li>
+                        <li><a href="{{ site.url }}/calculators/finance/loan-calculator/">Loan Calculator</a></li>
+                        <li><a href="{{ site.url }}/calculators/general/age-calculator/">Age Calculator</a></li>
+                        <li><a href="{{ site.url }}/calculators/math/percentage-calculator/">Percentage Calculator</a></li>
                     </ul>
                 </div>
-                <a href="{{ site.baseurl }}/calculators/" class="card-button">View All Calculators</a>
+                <a href="{{ site.url }}/calculators/" class="card-button">View All Calculators</a>
             </article>
 
             <article class="category-card" data-aos="fade-up" data-aos-delay="100">
@@ -265,7 +58,7 @@ h1, h2, h3, h4 {
                         <li><a href="#">Temperature Converter</a></li>
                     </ul>
                 </div>
-                <a href="{{ site.baseurl }}/converters/" class="card-button">View All Converters</a>
+                <a href="{{ site.url }}/converters/" class="card-button">View All Converters</a>
             </article>
 
             <article class="category-card" data-aos="fade-up" data-aos-delay="200">
@@ -283,7 +76,7 @@ h1, h2, h3, h4 {
                         <li><a href="#">UUID Generator</a></li>
                     </ul>
                 </div>
-                <a href="{{ site.baseurl }}/generators/" class="card-button">View All Generators</a>
+                <a href="{{ site.url }}/generators/" class="card-button">View All Generators</a>
             </article>
         </div>
     </section>
@@ -363,97 +156,12 @@ h1, h2, h3, h4 {
     </section>
 </main>
 
-<script>
-// Hardcoded data for the search bar
-const toolsData = [
-    { "title": "BMI Calculator", "url": "#", "category": "calculators" },
-    { "title": "Loan Calculator", "url": "#", "category": "calculators" },
-    { "title": "Age Calculator", "url": "#", "category": "calculators" },
-    { "title": "Percentage Calculator", "url": "#", "category": "calculators" },
-    { "title": "Currency Converter", "url": "#", "category": "converters" },
-    { "title": "Length Converter", "url": "#", "category": "converters" },
-    { "title": "Weight Converter", "url": "#", "category": "converters" },
-    { "title": "Temperature Converter", "url": "#", "category": "converters" },
-    { "title": "Password Generator", "url": "#", "category": "generators" },
-    { "title": "QR Code Generator", "url": "#", "category": "generators" },
-    { "title": "Lorem Ipsum Generator", "url": "#", "category": "generators" },
-    { "title": "UUID Generator", "url": "#", "category": "generators" }
-];
-
-document.addEventListener('DOMContentLoaded', () => {
-    // --- LIVE SEARCH FUNCTIONALITY ---
-    const searchInput = document.getElementById('toolSearch');
-    const searchResults = document.getElementById('searchResults');
-    if (searchInput && searchResults) {
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            searchResults.innerHTML = '';
-            if (query.length > 1) {
-                const filteredTools = toolsData.filter(tool => tool.title.toLowerCase().includes(query));
-                if (filteredTools.length > 0) {
-                    filteredTools.forEach(tool => {
-                        const a = document.createElement('a');
-                        a.href = tool.url;
-                        a.textContent = tool.title;
-                        searchResults.appendChild(a);
-                    });
-                    searchResults.style.display = 'block';
-                } else { searchResults.style.display = 'none'; }
-            } else { searchResults.style.display = 'none'; }
-        });
-        document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target)) { searchResults.style.display = 'none'; }
-        });
-    }
-
-    // --- SCROLL ANIMATION ---
-    const animatedElements = document.querySelectorAll('[data-aos]');
-    if (animatedElements.length > 0) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { entry.target.classList.add('aos-animate'); }
-            });
-        }, { threshold: 0.1 });
-        animatedElements.forEach(el => {
-            el.style.transform = 'translateY(30px)';
-            observer.observe(el);
-        });
-    }
-
-    // --- FAQ ACCORDION ---
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            faqItems.forEach(otherItem => {
-                otherItem.classList.remove('active');
-                otherItem.querySelector('.faq-answer').style.maxHeight = 0;
-            });
-            if (!isActive) {
-                item.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            }
-        });
-    });
-});
-</script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "ToolsClouds",
-  "url": "https://example.com/",
-  "description": "A modern suite of free online tools including calculators, converters, and generators, designed to simplify complex tasks with a beautiful user interface.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://example.com/search?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  }
+  "name": "ToolClouds",
+  "url": "https://toolclouds.com/",
+  "description": "Discover hundreds of free, fast, and user-friendly online tools. From calculators, converters, and generators, ToolsClouds is your all-in-one solution for every need."
 }
 </script>
