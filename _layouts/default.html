@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
+
+  {% seo %}  <!-- jekyll-seo-tag generates title, description, og, twitter, canonical, JSON-LD -->
+  <!-- <title>{{ page.title }} | {{ site.title }}</title>   asmseo inlcude title  -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
 </head>
 <body>
 

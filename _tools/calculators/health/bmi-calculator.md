@@ -2,7 +2,9 @@
 title: "BMI Calculator"
 layout: tool
 categories: [calculators, health]
-permalink: /calculators/health/bmi-calculator/
+permalink: /calculators/health/bmi-calculator/ 
+description: "Easily calculate your Body Mass Index (BMI) with our free BMI Calculator. Track your health and fitness instantly."
+tags: ["BMI", "Health Calculator", "Fitness", "Body Mass Index"]
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,11 +39,10 @@ permalink: /calculators/health/bmi-calculator/
     
     .bmi-calculator-wrapper {
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column; /* Changed to column to stack calculator and blog */
+        align-items: center; /* Center items */
         padding: 40px 20px;
         background-color: var(--bg-color);
-        min-height: 100vh;
     }
 
     .bmi-calculator {
@@ -169,9 +170,6 @@ permalink: /calculators/health/bmi-calculator/
 
     #result-placeholder { display: none; } /* Hide placeholder on mobile by default */
 
-    /* ---------------------------------- */
-    /* --- DESKTOP LAYOUT STARTS HERE --- */
-    /* ---------------------------------- */
     @media (min-width: 992px) {
         .bmi-calculator {
             max-width: 1140px; /* Stretch the container wider */
@@ -219,7 +217,6 @@ permalink: /calculators/health/bmi-calculator/
         }
         
         #result-container.visible {
-            /* Override mobile styles for desktop */
             margin-top: 0;
             padding-top: 0;
             border-top: none;
@@ -231,6 +228,7 @@ permalink: /calculators/health/bmi-calculator/
         .imperial-height { flex-direction: column; gap: 10px; }
         .bmi-value-display { font-size: 36px; }
     }
+
 </style>
 
 <div class="bmi-calculator-wrapper">
@@ -312,30 +310,63 @@ permalink: /calculators/health/bmi-calculator/
             <p>Note: BMI is a screening tool. Consult a healthcare provider for a comprehensive health assessment.</p>
         </footer>
     </div>
+    
+<div class="bmi-blog-content">
+    <h2>What is this BMI thing?</h2>
+    <p>
+        So, BMI is just a simple way to get a quick look at your health, using your weight and height. Think of it like a starting point. A easy way to see if your weight is in a healthy place. Doctors been using it for over 100 years to get a general idea about a persons weight.
+    </p>
+    
+    <h3>How they get the number?</h3>
+    <p>
+        The math is pretty simple really, its your weight (in kg) divided by your height (in meters) two times. But our calculator does all that math for you so you dont have to worry. It works with kg and cm, or pounds and inches too. That number it gives you puts you in a group.
+    </p>
+
+    <h3>So what do the numbers mean?</h3>
+    <p>
+        The groups help you understand your BMI number. Here’s a simple look at what each one usually means:
+    </p>
+    <ul>
+        <li><strong>Under 18.5 (Underweight):</strong> Means your weight might be a little low for how tall you are. This can sometimes cause problems, so it's a good idea to talk to a doctor, just to make sure you're getting all the food and energy you need.</li>
+        <li><strong>18.5 to 24.9 (Normal Weight):</strong> Awesome! Your in the healthy spot. People in this range usually have the lowest risk for some sicknesses. Just keep doin what you're doing with good food and moving around.</li>
+        <li><strong>25.0 to 29.9 (Overweight):</strong> This means you might have a little extra weight. Lot's of people are in this group, so don't worry. It's just a sign that maybe you can look at your food or try to move a bit more. Small changes can help alot.</li>
+        <li><strong>30.0 and up (Obesity):</strong> This group means there's more extra weight, and that can raise the risk for problems like heart trouble or diabetes. It's really a good idea to talk with a doctor. They can give you advice that's just for you and help you make a plan that works.</li>
+    </ul>
+
+    <h3>But BMI isn't everything.</h3>
+    <blockquote>
+        You gotta remember, BMI is just a hint. It's not a doctor's final word. It doesn't tell the whole story about your health.
+    </blockquote>
+    <p>
+        Why? Because it cant tell the difference between fat and muscle. Someone who works out a lot and has big muscles could have a high BMI and be super healthy. It also don't look at other important stuff, like:
+    </p>
+    <ul>
+        <li><strong>What you're made of:</strong> How much is muscle and how much is fat.</li>
+        <li><strong>Your age and if you're a man or woman:</strong> Things change as you get older.</li>
+        <li><strong>Where the fat is:</strong> Fat around your belly is different than fat on your legs.</li>
+    </ul>
+    
+    <h3>Lookin at the Big Picture of Health</h3>
+    <p>
+        So use your BMI number to start a chat with your doctor, don't let it be the last word on your health. Being truly healthy is about a lot of things. Like eating good food, moving in a way you like, getting good sleep, and feeling good in your head too. Everyone's health journey is different, and the BMI is just one little sign to look at.
+    </p>
+</div>    
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // ... JavaScript variables are the same ...
         const resultContainer = document.getElementById('result-container');
         const resultPlaceholder = document.getElementById('result-placeholder');
         
-        // --- The rest of the script is the same until the calculateBMI and resetCalculator functions ---
-        
         const calculateBtn = document.getElementById('calculate-btn');
-        // ... other variable declarations ...
 
         function calculateBMI() {
             let weight, height;
-            // ... calculation logic is the same ...
             
-            // NEW LOGIC for showing/hiding placeholder
-            if (window.innerWidth >= 992) { // Only apply this logic on desktop
+            if (window.innerWidth >= 992) {
                 resultPlaceholder.style.display = 'none';
             }
-            // ... the rest of the function is the same, including adding the 'visible' class
             
-            // --- This is the original calculateBMI function with the one new line added ---
             const unitSwitchers = document.querySelectorAll('input[name="unit"]');
             const metricInputs = document.getElementById('metric-inputs');
             const imperialInputs = document.getElementById('imperial-inputs');
@@ -370,20 +401,17 @@ permalink: /calculators/health/bmi-calculator/
         }
 
         function resetCalculator() {
-             // NEW LOGIC for resetting placeholder
-            if (window.innerWidth >= 992) { // Only apply this logic on desktop
+            if (window.innerWidth >= 992) {
                 resultPlaceholder.style.display = 'block';
             }
             document.querySelectorAll('.input-field, .imperial-height input').forEach(input => input.value = '');
             resultContainer.classList.remove('visible');
         }
 
-        // --- All other functions (updateUI, getBMICategory, etc.) and event listeners remain the same ---
         const unitSwitchers = document.querySelectorAll('input[name="unit"]');
         unitSwitchers.forEach(switcher => {
             switcher.addEventListener('change', (e) => {
                 resetCalculator();
-                // ... rest of the change listener
                 const metricInputs = document.getElementById('metric-inputs');
                 const imperialInputs = document.getElementById('imperial-inputs');
                 let currentUnit = e.target.value;
