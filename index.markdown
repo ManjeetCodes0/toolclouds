@@ -34,13 +34,13 @@ description: "Discover hundreds of free, fast, and user-friendly online tools. F
                 <div class="featured-tools">
                     <h4>Featured Tools:</h4>
                     <ul>
-                        <li><a href="{{ site.url }}/calculators/health/bmi-calculator/">BMI Calculator</a></li>
-                        <li><a href="{{ site.url }}/calculators/finance/loan-calculator/">Loan Calculator</a></li>
-                        <li><a href="{{ site.url }}/calculators/general/age-calculator/">Age Calculator</a></li>
-                        <li><a href="{{ site.url }}/calculators/math/percentage-calculator/">Percentage Calculator</a></li>
+                        <li><a href="{{ site.url }}/calculators/health/bmi-calculator">BMI Calculator</a></li>
+                        <li><a href="{{ site.url }}/calculators/finance/loan-calculator">Loan Calculator</a></li>
+                        <li><a href="{{ site.url }}/calculators/general/age-calculator">Age Calculator</a></li>
+                        <li><a href="{{ site.url }}/calculators/math/percentage-calculator">Percentage Calculator</a></li>
                     </ul>
                 </div>
-                <a href="{{ site.url }}/calculators/" class="card-button">View All Calculators</a>
+                <a href="{{ site.url }}/calculators" class="card-button">View All Calculators</a>
             </article>
 
             <article class="category-card" data-aos="fade-up" data-aos-delay="100">
@@ -58,7 +58,7 @@ description: "Discover hundreds of free, fast, and user-friendly online tools. F
                         <li><a href="#">Temperature Converter</a></li>
                     </ul>
                 </div>
-                <a href="{{ site.url }}/converters/" class="card-button">View All Converters</a>
+                <a href="{{ site.url }}/converters" class="card-button">View All Converters</a>
             </article>
 
             <article class="category-card" data-aos="fade-up" data-aos-delay="200">
@@ -76,7 +76,7 @@ description: "Discover hundreds of free, fast, and user-friendly online tools. F
                         <li><a href="#">UUID Generator</a></li>
                     </ul>
                 </div>
-                <a href="{{ site.url }}/generators/" class="card-button">View All Generators</a>
+                <a href="{{ site.url }}/generators" class="card-button">View All Generators</a>
             </article>
         </div>
     </section>
@@ -161,7 +161,7 @@ description: "Discover hundreds of free, fast, and user-friendly online tools. F
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "ToolClouds",
-  "url": "https://toolclouds.com/",
+  "url": "https://toolclouds.com",
   "description": "Discover hundreds of free, fast, and user-friendly online tools. From calculators, converters, and generators, ToolsClouds is your all-in-one solution for every need."
 }
 </script>

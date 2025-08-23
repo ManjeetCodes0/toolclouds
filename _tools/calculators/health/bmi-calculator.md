@@ -2,7 +2,7 @@
 title: "BMI Calculator"
 layout: tool
 categories: [calculators, health]
-permalink: /calculators/health/bmi-calculator/ 
+permalink: /calculators/health/bmi-calculator 
 description: "Easily calculate your Body Mass Index (BMI) with our free BMI Calculator. Track your health and fitness instantly."
 tags: ["BMI", "Health Calculator", "Fitness", "Body Mass Index"]
 ---

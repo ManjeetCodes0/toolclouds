@@ -2,7 +2,7 @@
 title: "Ideal Body Weight Calculator"
 layout: tool
 categories: [calculators, health]
-permalink: /calculators/health/ideal-body-weight-calculator/
+permalink: /calculators/health/ideal-body-weight-calculator
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
