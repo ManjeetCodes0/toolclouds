@@ -3,7 +3,7 @@ title: "Daily Water Intake Calculator - How Much Should You Drink?"
 localtitle: "Daily Water Intake Calculator"
 layout: tool
 categories: [calculators, health]
-permalink: /calculators/health/daily-water-intake-calculator
+permalink: /calculators/health/hydration-calculator
 description: "How much water should you drink daily? Our free Hydration Calculator (2025) determines your ideal water intake based on your weight, age, and activity level."
 tags:
   - "Hydration Calculator"
