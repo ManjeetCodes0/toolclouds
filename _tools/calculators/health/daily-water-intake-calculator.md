@@ -1,11 +1,23 @@
 ---
-title: "Hydration Calculator"
+title: "Daily Water Intake Calculator - How Much Should You Drink?"
+localtitle: "Daily Water Intake Calculator"
 layout: tool
 categories: [calculators, health]
 permalink: /calculators/health/hydration-calculator
-description: "Easily calculate your optimal daily water intake with our free Hydration Calculator. Stay healthy and hydrated based on your weight and activity level."
-tags: ["Hydration", "Water Intake", "Health Calculator", "Fitness", "Daily Water"]
+description: "How much water should you drink daily? Our free Hydration Calculator (2025) determines your ideal water intake based on your weight, age, and activity level."
+tags:
+  - "Hydration Calculator"
+  - "Daily Water Intake Calculator"
+  - "Water Calculator"
+  - "How Much Water to Drink"
+  - "Calculate Water Intake"
+  - "Hydration Needs"
+  - "Daily Hydration Goal"
+  - "Health Calculator"
+  - "Fitness Tool"
+  - "Dehydration"
 ---
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>

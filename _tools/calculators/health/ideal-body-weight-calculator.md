@@ -1,8 +1,21 @@
 ---
-title: "Ideal Body Weight Calculator"
+title: "Ideal Weight Calculator: Find Your Healthy Range"
+localtitle: "Ideal Weight Calculator"
 layout: tool
 categories: [calculators, health]
 permalink: /calculators/health/ideal-body-weight-calculator
+description: "Use our free and accurate Ideal Body Weight Calculator (2025) to find your healthy weight range. Enter your height and gender to get an instant IBW estimate."
+tags:
+  - "Ideal Weight Calculator"
+  - "Healthy Weight Calculator"
+  - "IBW Calculator"
+  - "Calculate Ideal Weight"
+  - "Weight to Height Ratio"
+  - "Healthy Weight Range"
+  - "Health Calculator"
+  - "Fitness Tool"
+  - "BMI"
+  - "Body Frame Size"
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

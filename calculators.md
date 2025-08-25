@@ -198,7 +198,7 @@ description: "Browse our comprehensive collection of free online calculators, or
             <ul class="tool-list">
                 {% assign health_tools = site.tools | where_exp:"item","item.categories contains 'health'" %}
                 {% for tool in health_tools %}
-                <li><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></li>
+                <li><a href="{{ tool.url | relative_url }}">{{ tool.localtitle }}</a></li>
                 {% endfor %}
             </ul>
 

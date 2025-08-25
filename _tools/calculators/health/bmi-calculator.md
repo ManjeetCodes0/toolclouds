@@ -1,12 +1,22 @@
 ---
-title: "BMI Calculator"
+title: "Free BMI Calculator - Check Your Body Mass Index"
+localtitle: "BMI Calculator"
 layout: tool
 categories: [calculators, health]
-permalink: /calculators/health/bmi-calculator 
-description: "Easily calculate your Body Mass Index (BMI) with our free BMI Calculator. Track your health and fitness instantly."
-tags: ["BMI", "Health Calculator", "Fitness", "Body Mass Index"]
+permalink: /calculators/health/bmi-calculator
+description: "Instantly check your Body Mass Index with our free BMI Calculator (2025). Enter your weight and height to find your BMI and see where you fall on the health chart."
+tags:
+  - "BMI Calculator"
+  - "Body Mass Index"
+  - "Calculate BMI"
+  - "What is my BMI"
+  - "BMI Chart"
+  - "Healthy BMI Range"
+  - "BMI Calculator India"
+  - "Health Calculator"
+  - "Fitness Tool"
+  - "Weight Status"
 ---
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
