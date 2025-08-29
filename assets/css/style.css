@@ -1,12 +1,84 @@
 /*
 ==============================================
---- MASTER CSS FILE (Mobile-First Approach) ---
+--- MASTER CSS FILE ---
 ==============================================
 */
 
-/* --- FONT IMPORTS --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* --- Inter --- */
+/* inter-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter/inter-v19-latin-regular.woff2') format('woff2');
+}
+/* inter-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/inter/inter-v19-latin-500.woff2') format('woff2');
+}
+/* inter-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/inter/inter-v19-latin-600.woff2') format('woff2');
+}
+/* inter-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/inter/inter-v19-latin-700.woff2') format('woff2');
+}
+/* inter-800 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/inter/inter-v19-latin-800.woff2') format('woff2');
+}
+
+/* --- Poppins --- */
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins/poppins-v23-devanagari_latin-regular.woff2') format('woff2');
+}
+/* poppins-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/poppins/poppins-v23-devanagari_latin-600.woff2') format('woff2');
+}
+/* poppins-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/poppins/poppins-v23-devanagari_latin-700.woff2') format('woff2');
+}
+/* poppins-800 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/poppins/poppins-v23-devanagari_latin-800.woff2') format('woff2');
+}
 
 /* --- UNIFIED CSS VARIABLES --- */
 :root {
@@ -260,6 +332,38 @@ h1, h2, h3, h4 {
 }
 .nav-toggler.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
+}
+
+/*
+ * CSS for the Mobile Navigation Close Button
+ * Add this to your main stylesheet.
+ */
+
+.nav-close-btn {
+    /* Positioning */
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1010; /* Make sure it's above other nav items */
+
+    /* Appearance */
+    background: transparent;
+    border: none;
+    padding: 10px; /* Increases the clickable area */
+    color: #ffffff; /* A dark color, adjust to match your theme */
+    font-size: 2.5rem; /* Makes the '×' symbol large and tappable */
+    font-weight: 300;
+    line-height: 1;
+
+    /* Interaction */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Optional: Add a subtle hover effect */
+.nav-close-btn:hover {
+    transform: rotate(90deg);
+    color: #377DFF; /* Use your site's primary color */
 }
 
 /*
@@ -712,3 +816,157 @@ h1, h2, h3, h4 {
     .hero-title { font-size: 2rem; }
     .section-header h2 { font-size: 1.7rem; }
 }
+
+
+
+
+
+
+
+
+/*
+==============================================
+--- Converter, calculators and gernators home page CSS FILE ---
+==============================================
+*/
+
+    /* Scoping variables to the main container to avoid global conflicts */
+    .clp-page-container {
+        --clp-color-primary: #377DFF; /* A vibrant, link-friendly blue */
+        --clp-color-heading: #1A202C;
+        --clp-color-body-text: #718096; /* Lighter gray for descriptions */
+        --clp-color-background: #F8F9FB; /* Light gray page background */
+        --clp-color-white: #FFFFFF;
+        --clp-color-border: #E2E8F0;
+        --clp-shadow-md: 0 8px 25px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --clp-font-family: 'Poppins', sans-serif;
+        --clp-border-radius: 16px;
+        --clp-container-width: 1200px;
+    }
+
+    /* --- BASE STYLES --- */
+    /* Note: These base styles are scoped within the component. 
+       If you have global resets, you might not need these. */
+    .clp-page-container * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Using the local variables for styling the component */
+    .clp-page-container {
+        font-family: var(--clp-font-family);
+        background-color: var(--clp-color-background);
+        color: var(--clp-color-body-text);
+        line-height: 1.6;
+    }
+
+    /* --- LAYOUT & TYPOGRAPHY --- */
+    .clp-page-container {
+        max-width: var(--clp-container-width);
+        margin: 0 auto;
+        padding: 60px 20px;
+    }
+
+    .clp-page-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .clp-page-header h1 {
+        font-size: 2.75rem;
+        color: var(--clp-color-heading);
+        margin-bottom: 1rem;
+    }
+    
+    .clp-page-header p {
+        font-size: 1.1rem;
+        color: var(--clp-color-body-text);
+    }
+
+    /* --- GRID CONTAINER --- */
+    .clp-tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+    }
+
+    /* --- TOOL CARD STYLING --- */
+    .clp-tool-card {
+        background-color: var(--clp-color-white);
+        border-radius: var(--clp-border-radius);
+        padding: 40px 30px;
+        border: 1px solid var(--clp-color-border);
+        box-shadow: 0 4px 6px rgba(226,232,240, 0.6);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .clp-tool-card.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .clp-tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--clp-shadow-md);
+    }
+
+    .clp-card-icon {
+        margin: 0 auto 20px auto;
+        width: 64px;
+        height: 64px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background-image: linear-gradient(145deg, #7F56D9 0%, #5A67D8 100%);
+        color: var(--clp-color-white);
+        box-shadow: 0 8px 16px rgba(90, 103, 216, 0.25);
+    }
+
+    .clp-card-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .clp-card-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--clp-color-heading);
+        margin: 0 0 10px 0;
+    }
+
+    .clp-card-description {
+        color: var(--clp-color-body-text);
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .clp-card-separator {
+        border: none;
+        height: 1px;
+        background-color: var(--clp-color-border);
+        margin: 0 auto 25px auto;
+    }
+
+    .clp-tool-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .clp-tool-list a {
+        color: var(--clp-color-primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: text-decoration 0.2s ease;
+    }
+
+    .clp-tool-list a:hover {
+        text-decoration: underline;
+    }
