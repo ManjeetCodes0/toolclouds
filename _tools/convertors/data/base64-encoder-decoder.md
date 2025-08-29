@@ -45,7 +45,7 @@ tags:
             width: 100%;
             max-width: 1200px;
             gap: 30px;
-            padding: 20px;
+            padding: 20px 3px;
         }
 
         /* Mobile-first ordering */

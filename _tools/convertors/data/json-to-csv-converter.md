@@ -81,7 +81,7 @@ tags:
             max-width: 1200px;
             margin: 0 auto;
             gap: 30px;
-            padding: 20px;
+            padding: 20px 3px;
             position: relative;
             z-index: 1;
         }
