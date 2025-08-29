@@ -1,35 +1,52 @@
 // navbar Sricpt
 // for mobile toggle
-
 document.addEventListener('DOMContentLoaded', () => {
-            const navToggler = document.getElementById('js-nav-toggler');
-            const mobileNav = document.getElementById('js-mobile-nav');
+    const navToggler = document.getElementById('js-nav-toggler');
+    const mobileNav = document.getElementById('js-mobile-nav');
+    // 1. Get the new close button from your HTML
+    const navClose = document.getElementById('js-nav-close');
 
-            if (navToggler && mobileNav) {
-                navToggler.addEventListener('click', () => {
-                    navToggler.classList.toggle('active');
-                    mobileNav.classList.toggle('active');
-                    document.body.classList.toggle('nav-open');
-                });
+    if (navToggler && mobileNav && navClose) {
+        
+        // --- Function to OPEN the navigation ---
+        const openMobileNav = () => {
+            navToggler.classList.add('active');
+            mobileNav.classList.add('active');
+            document.body.classList.add('nav-open');
+        };
+        
+        // --- Function to CLOSE the navigation (to avoid repeating code) ---
+        const closeMobileNav = () => {
+            navToggler.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        };
 
-                const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-                mobileLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        navToggler.classList.remove('active');
-                        mobileNav.classList.remove('active');
-                        document.body.classList.remove('nav-open');
-                    });
-                });
+        // --- Event Listeners ---
+
+        // Hamburger icon toggles the navigation
+        navToggler.addEventListener('click', () => {
+            if (mobileNav.classList.contains('active')) {
+                closeMobileNav();
+            } else {
+                openMobileNav();
             }
+        });
+
+        // 2. The new close button will close the navigation
+        navClose.addEventListener('click', closeMobileNav);
+
+        // Clicking any link inside the mobile nav will also close it
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileNav);
+        });
+    }
 });
 
 
-
-
-
 // Index page JS
-
-
+// (The rest of your code remains the same)
 
 // Hardcoded data for the search bar
 const toolsData = [
@@ -105,7 +122,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-
-
-
