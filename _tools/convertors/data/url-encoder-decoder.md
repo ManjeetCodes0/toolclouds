@@ -3,7 +3,7 @@ title: "URL Encoder & Decoder: With Parameters & Special Characters"
 localtitle: "URL Encoder/Decoder"
 layout: tool
 categories: [converters, data]
-permalink: /converters/encoding/url-encoder-decoder
+permalink: /converters/data/url-encoder-decoder
 description: "Free online URL encoder and decoder. Encode special characters, decode encoded URLs. Perfect for web development and API testing."
 tags:
   - "URL Encoder"
