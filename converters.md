@@ -50,10 +50,10 @@ description: "Browse our comprehensive collection of free online converters, org
             <p class="clp-card-description">Transform data between different formats, such as JSON, XML, and CSV.</p>
             <hr class="clp-card-separator">
             <ul class="clp-tool-list">
-                <li><a href="#">JSON to CSV</a></li>
-                <li><a href="#">XML to JSON</a></li>
-                <li><a href="#">Base64 Encoder</a></li>
-                <li><a href="#">URL Decoder</a></li>
+                {% assign data_tools = site.tools | where_exp:"item","item.categories contains 'data'" %}
+                {% for tool in data_tools %}
+                <li><a href="{{ tool.url | relative_url }}">{{ tool.localtitle }}</a></li>
+                {% endfor %}
             </ul>
         </article>
     </main>
