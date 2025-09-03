@@ -61,14 +61,14 @@ description: "Browse our comprehensive collection of free online calculators, or
             <div class="clp-card-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg>
             </div>
-            <h2 class="clp-card-title">Unit Converters</h2>
+            <h2 class="clp-card-title">Education Calculators</h2>
             <p class="clp-card-description">Convert between different units of measurement, like length and weight.</p>
             <hr class="clp-card-separator">
             <ul class="clp-tool-list">
-                <li><a href="#">Length Converter</a></li>
-                <li><a href="#">Weight Converter</a></li>
-                <li><a href="#">Temperature Converter</a></li>
-                <li><a href="#">Area Converter</a></li>
+                {% assign education_tools = site.tools | where_exp:"item","item.categories contains 'educationCalc'" %}
+                {% for tool in education_tools %}
+                <li><a href="{{ tool.url | relative_url }}">{{ tool.localtitle }}</a></li>
+                {% endfor %}
             </ul>
         </article>
 
