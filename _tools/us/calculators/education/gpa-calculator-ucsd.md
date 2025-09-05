@@ -555,9 +555,16 @@ faq_schema:
             <div class="at-related-card">
                 <h3>📚 More College GPA Tools</h3>
                 <ul>
-                    <li><a href="/us/calculators/education/gpa-calculator-asu"><i class="fas fa-graduation-cap"></i>ASU GPA Calculator</a></li>
-                    <li><a href="/us/calculators/education/gpa-calculator-rutgers"><i class="fas fa-graduation-cap"></i>Rutgers GPA Calculator</a></li>
-                    <li><a href="/us/calculators/education/gpa-calculator-auburn"><i class="fas fa-graduation-cap"></i>Auburn GPA Calculator</a></li>
+                {% assign education_tools = site.tools | where_exp:"item","item.categories contains 'education-US'" %}
+                        {% for tool in education_tools %}
+                            {% unless tool.url == page.url %}
+                                <li>
+                                    <a href="{{ tool.url | relative_url }}">
+                                        <i class="fas fa-graduation-cap"></i>{{ tool.localtitle }}
+                                    </a>
+                                </li>
+                            {% endunless %}
+                {% endfor %}
                 </ul>
             </div>
         </div>

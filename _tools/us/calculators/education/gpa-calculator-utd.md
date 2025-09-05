@@ -807,22 +807,14 @@ faq_schema:
             <div class="utd-tools-card">
                 <h3><i class="fas fa-tools"></i> Related GPA Tools</h3>
                 <div>
-                    <a href="/us/calculators/education/gpa-calculator-tamu" class="utd-tool-link">
-                        <i class="fas fa-calculator"></i>
-                        <span>Texas A&M GPA Calculator</span>
-                    </a>
-                    <a href="/us/calculators/education/gpa-calculator-ut-austin" class="utd-tool-link">
-                        <i class="fas fa-calculator"></i>
-                        <span>UT Austin GPA Calculator</span>
-                    </a>
-                    <a href="/us/calculators/education/gpa-calculator-uh" class="utd-tool-link">
-                        <i class="fas fa-calculator"></i>
-                        <span>UH GPA Calculator</span>
-                    </a>
-                    <a href="/us/calculators/education/college-gpa-calculator" class="utd-tool-link">
-                        <i class="fas fa-calculator"></i>
-                        <span>General College GPA Calculator</span>
-                    </a>
+                    {% assign education_tools = site.tools | where_exp:"item","item.categories contains 'education-US'" %}
+                        {% for tool in education_tools %}
+                            {% unless tool.url == page.url %}
+                                <a href="{{ tool.url | relative_url }}" class="utk-tool-item"> <i class="fas fa-graduation-cap"></i>
+                                <span>{{ tool.localtitle }}</span>
+                                </a>
+                            {% endunless %}
+                    {% endfor %}
                 </div>
             </div>
         </div>

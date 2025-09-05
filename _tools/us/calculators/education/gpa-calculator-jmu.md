@@ -798,22 +798,14 @@ faq_schema:
                     Related GPA Tools
                 </h3>
                 <div>
-                    <a href="/us/calculators/education/gpa-calculator-vt" class="jmu-link-item">
-                        <i class="fas fa-calculator"></i>
-                        <span>Virginia Tech GPA Calculator</span>
-                    </a>
-                    <a href="/us/calculators/education/gpa-calculator-uva" class="jmu-link-item">
-                        <i class="fas fa-calculator"></i>
-                        <span>UVA GPA Calculator</span>
-                    </a>
-                    <a href="/us/calculators/education/gpa-calculator-vcu" class="jmu-link-item">
-                        <i class="fas fa-calculator"></i>
-                        <span>VCU GPA Calculator</span>
-                    </a>
-                    <a href="/us/calculators/education/college-gpa-calculator" class="jmu-link-item">
-                        <i class="fas fa-calculator"></i>
-                        <span>General College GPA Calculator</span>
-                    </a>
+                    {% assign education_tools = site.tools | where_exp:"item","item.categories contains 'education-US'" %}
+                        {% for tool in education_tools %}
+                            {% unless tool.url == page.url %}
+                                <a href="{{ tool.url | relative_url }}" class="utk-tool-item"> <i class="fas fa-graduation-cap"></i>
+                                <span>{{ tool.localtitle }}</span>
+                                </a>
+                            {% endunless %}
+                    {% endfor %}
                 </div>
             </div>
         </div>

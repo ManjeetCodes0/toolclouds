@@ -785,22 +785,14 @@ faq_schema:
             <div class="utk-related-tools">
                 <h3 class="utk-related-title"><i class="fas fa-link"></i> Related Calculators</h3>
                 <div>
-                    <a href="/us/calculators/education/gpa-calculator-vanderbilt" class="utk-tool-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Vanderbilt GPA Calculator</span>
-                    </a>
-                    <a href="/us/calculators/education/gpa-calculator-memphis" class="utk-tool-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Memphis GPA Calculator</span>
-                    </a>
-                    <a href="/us/calculators/education/gpa-calculator-mtsu" class="utk-tool-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>MTSU GPA Calculator</span>
-                    </a>
-                    <a href="/us/calculators/education/college-gpa-calculator" class="utk-tool-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Universal College GPA Tool</span>
-                    </a>
+                    {% assign education_tools = site.tools | where_exp:"item","item.categories contains 'education-US'" %}
+                        {% for tool in education_tools %}
+                            {% unless tool.url == page.url %}
+                                <a href="{{ tool.url | relative_url }}" class="utk-tool-item"> <i class="fas fa-graduation-cap"></i>
+                                <span>{{ tool.localtitle }}</span>
+                                </a>
+                            {% endunless %}
+                        {% endfor %}
                 </div>
             </div>
         </div>
