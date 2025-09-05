@@ -272,7 +272,7 @@ tags:
                 <div class="ssc-ac1-sidebar-card ac2-related-tools">
                     <h3><i class="fas fa-compass-drafting"></i> Explore Tools</h3>
                     <ul>
-                        {% assign education_tools = site.tools | where_exp:"item","item.categories contains 'educationCalc'" %}
+                        {% assign education_tools = site.tools | where_exp:"item","item.categories contains 'examsCalc'" %}
                         {% for tool in education_tools %}
                             {% unless tool.url == page.url %}
                                 <li>

@@ -325,7 +325,7 @@ tags:
                 <div class="upsc-ac4-card upsc-ac4-sidebar-card">
                     <h3>Related Tools</h3>
                 <ul class = "related-tools-list">
-                        {% assign education_tools = site.tools | where_exp:"item","item.categories contains 'educationCalc'" %}
+                        {% assign education_tools = site.tools | where_exp:"item","item.categories contains 'examsCalc'" %}
                         {% for tool in education_tools %}
                             {% unless tool.url == page.url %}
                                 <li>

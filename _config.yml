@@ -19,8 +19,21 @@ author:
 
 
 defaults:
+  # US tools - MUST be FIRST (most specific)
+  - scope:
+      path: "_tools/us/"
+      type: "tools"
+    values:
+      layout: "tool"
+      region: "US"
+      lang: "en-US"
+      
+  # All other tools (less specific)
   - scope:
       path: ""
       type: "tools"
     values:
-      layout: tool
+      layout: "tool"
+      region: "IN"
+      lang: "en-IN"
+

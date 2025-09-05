@@ -1,25 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- search console -->
+  <!-- search console for normal and us spefic -->
   <meta name="google-site-verification" content="ssB5nVNdbJvAh4nQaXLo9RLkWBmfLLpbDFWqs-7UCFU" />
-
+  <meta name="google-site-verification" content="2N6VkJwgcBTIsZwfRbDchgquXPT5PTwPbhLCEg4Ybew" />
   {% seo %}  
 
-<!-- come from navbar -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  {% if page.schema %}
+    <script type="application/ld+json">
+    {{ page.schema | jsonify }}
+    </script>
+  {% endif %}
 
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <!-- ADD FAQ SCHEMA IF YOU HAVE IT -->
+  {% if page.faq_schema %}
+    <script type="application/ld+json">
+    {{ page.faq_schema | jsonify }}
+    </script>
+  {% endif %}
 
-<!-- Favicon for modern browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicons/favicon-32x32.png' | relative_url }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicons/favicon-16x16.png' | relative_url }}">
-<!-- Fallback for older browsers -->
-<link rel="shortcut icon" href="{{ '/assets/images/favicons/favicon.ico' | relative_url }}">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <!-- Favicon for modern browsers -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicons/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicons/favicon-16x16.png' | relative_url }}">
+  <!-- Fallback for older browsers -->
+  <link rel="shortcut icon" href="{{ '/assets/images/favicons/favicon.ico' | relative_url }}">
 </head>
 
 <body>
