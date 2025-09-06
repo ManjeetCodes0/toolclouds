@@ -1,30 +1,53 @@
-// navbar Sricpt
-// for mobile toggle
 document.addEventListener('DOMContentLoaded', () => {
-    const navToggler = document.getElementById('js-nav-toggler');
-    const mobileNav = document.getElementById('js-mobile-nav');
-    // 1. Get the new close button from your HTML
-    const navClose = document.getElementById('js-nav-close');
+
+    // --- 1. THEME TOGGLE LOGIC ---
+    // Handles light/dark mode switching and saves the user's preference.
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+
+    const setTheme = (theme) => {
+        htmlEl.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    };
+
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else if (prefersDark) {
+        setTheme('dark');
+    } else {
+        setTheme('light');
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        });
+    }
+
+    // --- 3. MOBILE NAVIGATION LOGIC ---
+    // Uses your advanced script with updated element IDs.
+    const navToggler = document.getElementById('nav-toggler');
+    const mobileNav = document.getElementById('mobile-nav');
+    const navClose = document.getElementById('nav-close');
 
     if (navToggler && mobileNav && navClose) {
-        
-        // --- Function to OPEN the navigation ---
         const openMobileNav = () => {
             navToggler.classList.add('active');
             mobileNav.classList.add('active');
             document.body.classList.add('nav-open');
         };
         
-        // --- Function to CLOSE the navigation (to avoid repeating code) ---
         const closeMobileNav = () => {
             navToggler.classList.remove('active');
             mobileNav.classList.remove('active');
             document.body.classList.remove('nav-open');
         };
 
-        // --- Event Listeners ---
-
-        // Hamburger icon toggles the navigation
         navToggler.addEventListener('click', () => {
             if (mobileNav.classList.contains('active')) {
                 closeMobileNav();
@@ -33,41 +56,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // 2. The new close button will close the navigation
         navClose.addEventListener('click', closeMobileNav);
 
-        // Clicking any link inside the mobile nav will also close it
         const mobileLinks = document.querySelectorAll('.mobile-nav-link');
         mobileLinks.forEach(link => {
             link.addEventListener('click', closeMobileNav);
         });
     }
-});
 
 
-// Index page JS
-// (The rest of your code remains the same)
-
-// Hardcoded data for the search bar
-const toolsData = [
-    { "title": "BMI Calculator", "url": "#", "category": "calculators" },
-    { "title": "Loan Calculator", "url": "#", "category": "calculators" },
-    { "title": "Age Calculator", "url": "#", "category": "calculators" },
-    { "title": "Percentage Calculator", "url": "#", "category": "calculators" },
-    { "title": "Currency Converter", "url": "#", "category": "converters" },
-    { "title": "Length Converter", "url": "#", "category": "converters" },
-    { "title": "Weight Converter", "url": "#", "category": "converters" },
-    { "title": "Temperature Converter", "url": "#", "category": "converters" },
-    { "title": "Password Generator", "url": "#", "category": "generators" },
-    { "title": "QR Code Generator", "url": "#", "category": "generators" },
-    { "title": "Lorem Ipsum Generator", "url": "#", "category": "generators" },
-    { "title": "UUID Generator", "url": "#", "category": "generators" }
-];
-
-document.addEventListener('DOMContentLoaded', () => {
-    // --- LIVE SEARCH FUNCTIONALITY ---
+    // --- 4. LIVE SEARCH FUNCTIONALITY ---
+    const toolsData = [
+        { "title": "BMI Calculator", "url": "#", "category": "calculators" },
+        { "title": "Loan Calculator", "url": "#", "category": "calculators" },
+        { "title": "Age Calculator", "url": "#", "category": "calculators" },
+        { "title": "Percentage Calculator", "url": "#", "category": "calculators" },
+        { "title": "Currency Converter", "url": "#", "category": "converters" },
+        { "title": "Length Converter", "url": "#", "category": "converters" },
+        { "title": "Weight Converter", "url": "#", "category": "converters" },
+        { "title": "Temperature Converter", "url": "#", "category": "converters" },
+        { "title": "Password Generator", "url": "#", "category": "generators" },
+        { "title": "QR Code Generator", "url": "#", "category": "generators" },
+        { "title": "Lorem Ipsum Generator", "url": "#", "category": "generators" },
+        { "title": "UUID Generator", "url": "#", "category": "generators" }
+    ];
+    
     const searchInput = document.getElementById('toolSearch');
     const searchResults = document.getElementById('searchResults');
+    
     if (searchInput && searchResults) {
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase();
@@ -77,48 +93,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (filteredTools.length > 0) {
                     filteredTools.forEach(tool => {
                         const a = document.createElement('a');
-                        a.href = tool.url;
+                        a.href = tool.url; // Note: you'll want to update these URLs
                         a.textContent = tool.title;
                         searchResults.appendChild(a);
                     });
                     searchResults.style.display = 'block';
-                } else { searchResults.style.display = 'none'; }
-            } else { searchResults.style.display = 'none'; }
+                } else {
+                    searchResults.style.display = 'none';
+                }
+            } else {
+                searchResults.style.display = 'none';
+            }
         });
         document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target)) { searchResults.style.display = 'none'; }
+            if (!searchInput.contains(e.target)) {
+                searchResults.style.display = 'none';
+            }
         });
     }
 
-    // --- SCROLL ANIMATION ---
+
+    // --- 5. SCROLL ANIMATION (AOS) ---
     const animatedElements = document.querySelectorAll('[data-aos]');
-    if (animatedElements.length > 0) {
+    if (animatedElements.length > 0 && "IntersectionObserver" in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) { entry.target.classList.add('aos-animate'); }
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('aos-animate');
+                }
             });
         }, { threshold: 0.1 });
         animatedElements.forEach(el => {
-            el.style.transform = 'translateY(30px)';
             observer.observe(el);
         });
     }
 
-    // --- FAQ ACCORDION ---
+
+    // --- 6. FAQ ACCORDION ---
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         const answer = item.querySelector('.faq-answer');
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            faqItems.forEach(otherItem => {
-                otherItem.classList.remove('active');
-                otherItem.querySelector('.faq-answer').style.maxHeight = 0;
+        if (question && answer) {
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = 0;
+                });
+                
+                // Open the clicked item if it wasn't already active
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
             });
-            if (!isActive) {
-                item.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            }
-        });
+        }
     });
+
 });
