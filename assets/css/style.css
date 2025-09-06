@@ -1,9 +1,3 @@
-/*
-==============================================
---- MASTER CSS FILE ---
-==============================================
-*/
-
 /* --- Inter --- */
 /* inter-regular - latin */
 @font-face {
@@ -91,10 +85,11 @@
     --color-heading: #1A202C;
     --color-body-text: #4A5568;
     --color-secondary-text: #7A7F9D;
+    --color-white-hero: #ffffff;
 
     /* Backgrounds & Borders */
     --color-background: #F7FAFC;
-    --color-white: #FFFFFF;
+    --color-white: #FFFFFF; /* Used for element backgrounds like cards/header */
     --color-border: #E2E8F0;
     --color-dark-bg: #23273B;
 
@@ -109,6 +104,26 @@
     /* Fonts */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --font-secondary: 'Poppins', sans-serif;
+}
+
+/* --- ADDED: DARK THEME VARIABLES --- */
+[data-theme="dark"] {
+    --color-primary: #7F8CF3;
+    --color-primary-dark: #5A67D8;
+    --color-primary-light: #3a2d5c;
+    
+    --color-heading: #F7FAFC;
+    --color-body-text: #A0AEC0;
+    --color-secondary-text: #718096;
+
+    --color-background: #1A202C;
+    --color-white: #2D3748; 
+    --color-border: #4A5568;
+    --color-dark-bg: #1A202C;
+
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }
 
 /* --- BASE & RESET STYLES --- */
@@ -127,6 +142,7 @@ body {
     line-height: 1.7;
     width: 100%;
     overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
 }
 body.nav-open {
     overflow: hidden;
@@ -135,22 +151,20 @@ h1, h2, h3, h4 {
     color: var(--color-heading);
     font-weight: 700;
     line-height: 1.3;
+    transition: color 0.3s;
 }
 
-/*
-==============================================
---- HEADER / NAVBAR ---
-==============================================
-*/
+/* --- HEADER / NAVBAR --- */
 .site-header {
     background: var(--color-white);
     box-shadow: var(--shadow-md);
     height: var(--header-height);
     display: flex;
     align-items: center;
-    position: relative;   
+    position: sticky; /* Changed to sticky for better behavior */
     top: 0;
     z-index: 100;
+    transition: var(--transition);
 }
 .header-container {
     max-width: 1280px;
@@ -178,7 +192,12 @@ h1, h2, h3, h4 {
 }
 .main-nav .nav-list {
     display: flex;
+    align-items: center; /* Vertically align items */
     list-style: none;
+}
+.nav-item {
+    display: flex; /* Added for alignment */
+    align-items: center;
 }
 .nav-link {
     display: flex;
@@ -195,6 +214,7 @@ h1, h2, h3, h4 {
 }
 .nav-link:hover {
     color: var(--color-heading);
+    background-color: var(--color-border);
 }
 .nav-link.active {
     background: var(--color-primary);
@@ -239,7 +259,7 @@ h1, h2, h3, h4 {
     align-items: center;
     padding: 0.8rem 1rem;
     text-decoration: none;
-    color: var(--color-white);
+    color: #f0f0f0; /* Adjusted for dark dropdown background */
     font-weight: 500;
     transition: var(--transition);
     border-radius: 8px;
@@ -253,6 +273,45 @@ h1, h2, h3, h4 {
     width: 20px;
     text-align: center;
 }
+
+/* --- ADDED: HEADER ACTIONS CONTAINER --- */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* --- ADDED: THEME TOGGLE BUTTON --- */
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-secondary-text);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: var(--transition);
+}
+.theme-toggle:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    transition: transform 0.3s ease;
+}
+.moon-icon { display: none; }
+.sun-icon { display: block; }
+[data-theme="dark"] .moon-icon { display: block; }
+[data-theme="dark"] .sun-icon { display: none; }
+
+/* --- MOBILE NAVIGATION --- */
 .nav-toggler {
     display: none;
     background: transparent;
@@ -261,6 +320,7 @@ h1, h2, h3, h4 {
     height: 40px;
     cursor: pointer;
     z-index: 1001;
+    position: relative; /* For z-index to work */
 }
 .nav-toggler span {
     width: 28px;
@@ -311,7 +371,7 @@ h1, h2, h3, h4 {
     display: block;
     padding: 1rem 0;
     text-decoration: none;
-    color: var(--color-white);
+    color: var(--color-white-hero);
     font-weight: 500;
     font-size: 2rem;
     font-family: var(--font-secondary);
@@ -333,44 +393,89 @@ h1, h2, h3, h4 {
 .nav-toggler.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
 }
-
-/*
- * CSS for the Mobile Navigation Close Button
- * Add this to your main stylesheet.
- */
-
 .nav-close-btn {
-    /* Positioning */
     position: absolute;
     top: 15px;
     right: 20px;
-    z-index: 1010; /* Make sure it's above other nav items */
-
-    /* Appearance */
+    z-index: 1010;
     background: transparent;
     border: none;
-    padding: 10px; /* Increases the clickable area */
-    color: #ffffff; /* A dark color, adjust to match your theme */
-    font-size: 2.5rem; /* Makes the '×' symbol large and tappable */
+    padding: 10px;
+    color: #ffffff;
+    font-size: 2.5rem;
     font-weight: 300;
     line-height: 1;
-
-    /* Interaction */
     cursor: pointer;
     transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
 }
-
-/* Optional: Add a subtle hover effect */
 .nav-close-btn:hover {
     transform: rotate(90deg);
-    color: #377DFF; /* Use your site's primary color */
+    color: var(--color-primary);
+}
+
+/* --- (REST OF YOUR CSS...) --- */
+
+/* --- RESPONSIVE & DESKTOP STYLES --- */
+@media (max-width: 992px) {
+    .main-nav {
+        display: none;
+    }
+    .nav-toggler {
+        display: block;
+    }
 }
 
 /*
 ==============================================
 --- MAIN PAGE CONTENT (Mobile-First) ---
 ==============================================
+
+==============================================
+--- ADDED: DARK THEME FOR MAIN PAGE CONTENT ---
+==============================================
 */
+
+/* --- Dark Theme Overrides for Global Elements --- */
+[data-theme="dark"] {
+  /* Fixes the search input icon color in dark mode */
+  .search-wrapper svg {
+    color: var(--color-secondary-text);
+  }
+
+  /* Fixes the search result hover color in dark mode */
+  .search-results a:hover {
+    background-color: var(--color-background);
+  }
+
+  /* Makes the focus ring on the search bar visible in dark mode */
+  #toolSearch:focus {
+    box-shadow: 0 0 0 4px rgba(127, 140, 243, 0.3); /* Lighter version of primary color */
+  }
+
+  /* Optional: Adjust the hero gradient for dark mode for a deeper look */
+  .hero-section {
+      background: linear-gradient(135deg, #434190 0%, #23273B 100%);
+  }
+}
+
+
+/* --- Dark Theme for CLP (Calculator List Page) Component --- */
+/* This redefines the local --clp variables when dark mode is active */
+[data-theme="dark"] .clp-page-container {
+    --clp-color-primary: #5A8DFF;
+    --clp-color-heading: #E0E6F1;
+    --clp-color-body-text: #A9B4C7;
+    --clp-color-background: #1A202C; /* Matches main dark background */
+    --clp-color-white: #2D3748;      /* Cards get a dark background */
+    --clp-color-border: #4A5568;
+    --clp-shadow-md: 0 8px 25px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+}
+
+/* We also need to override the hardcoded light-colored shadow on the CLP cards */
+[data-theme="dark"] .clp-tool-card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
 .section-container {
     max-width: var(--container-width);
     margin: 0 auto;
@@ -396,14 +501,14 @@ h1, h2, h3, h4 {
 .hero-section {
     padding: 100px 20px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: var(--color-white);
+    color: var(--color-white-hero);
     text-align: center;
 }
 .hero-title {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--color-white);
+    color: var(--color-white-hero);
 }
 .hero-subtitle {
     font-size: 1.25rem;
@@ -575,6 +680,7 @@ h1, h2, h3, h4 {
     font-size: 0.95rem;
     margin: 0;
     flex-grow: 1;
+    color: #8159dd;
 }
 .popular-tool-link {
     color: var(--color-primary);

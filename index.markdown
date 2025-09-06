@@ -81,7 +81,7 @@ description: "Discover hundreds of free, fast, and user-friendly online tools. F
         </div>
     </section>
 
-    <section class="section-container" style="background-color: #EDF2F7;" aria-labelledby="popular-tools-title">
+    <section class="section-container" aria-labelledby="popular-tools-title">
         <div class="section-header">
             <h2 id="popular-tools-title">Popular Tools</h2>
             <p>Check out some of the most frequently used tools by our visitors.</p>

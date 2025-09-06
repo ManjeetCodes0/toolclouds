@@ -1,46 +1,51 @@
+{%- assign basePath = '' -%}
+{%- if page.url contains '/us/' -%}
+    {%- assign basePath = '/us' -%}
+{%- endif -%}
+
 <header class="site-header">
     <div class="header-container">
-        <a href="/" class="logo">
-            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-            </svg>
+        <a href="{{ basePath | default: '/' }}" class="logo">
+            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
             <span>ToolClouds</span>
         </a>
+
         <nav class="main-nav">
             <ul class="nav-list">
-                <li class="nav-item"><a href="/" class="nav-link" aria-current="page"><i
-                            class="fas fa-home"></i><span>Home</span></a></li>
+                <li class="nav-item"><a href="{{ basePath | default: '/' }}" class="nav-link {% if page.url == '/' or page.url == '/us/' %}active{% endif %}">Home</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link active"><i class="fas fa-tools"></i><span>Tools</span></a>
+                    <a href="#" class="nav-link">Tools</a>
                     <div class="dropdown-menu">
-                        <a href="/calculators" class="dropdown-item"><i
-                                class="fas fa-calculator"></i><span>Calculators</span></a>
-                        <a href="/converters" class="dropdown-item"><i
-                                class="fas fa-exchange-alt"></i><span>Converters</span></a>
-                        <a href="/generators" class="dropdown-item"><i
-                                class="fas fa-cog"></i><span>Generators</span></a>
+                        <a href="{{ basePath }}/calculators" class="dropdown-item">Calculators</a>
+                        <a href="{{ basePath }}/converters" class="dropdown-item">Converters</a>
+                        <a href="{{ basePath }}/generators" class="dropdown-item">Generators</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="/about" class="nav-link"><i class="fas fa-blog"></i><span>About</span></a>
-                </li>
-                <li class="nav-item"><a href="/contact" class="nav-link"><i
-                            class="fas fa-envelope"></i><span>Contact</span></a></li>
+                <li class="nav-item"><a href="/about" class="nav-link {% if page.url == '/about/' or page.url == '/us/about/' %}active{% endif %}">About</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link {% if page.url == '/contact/' or page.url == '/us/contact/' %}active{% endif %}">Contact</a></li>
             </ul>
         </nav>
-        <button class="nav-toggler" id="js-nav-toggler">
-            <span></span><span></span><span></span>
-        </button>
+
+        <div class="header-actions">
+            <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button class="nav-toggler" id="nav-toggler">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </div>
 </header>
 
-<nav class="mobile-nav" id="js-mobile-nav">
-    <button id="js-nav-close" class="nav-close-btn">&times;</button> 
+<nav class="mobile-nav" id="mobile-nav">
+    <button id="nav-close" class="nav-close-btn">&times;</button> 
     <ul class="mobile-nav-list">
-        <li><a href="/" class="mobile-nav-link">Home</a></li>
-        <li><a href="/calculators" class="mobile-nav-link">Calculators</a></li>
-        <li><a href="/converters" class="mobile-nav-link">Converters</a></li>
-        <li><a href="/generators" class="mobile-nav-link">Generators</a></li>
+        <li><a href="{{ basePath | default: '/' }}" class="mobile-nav-link">Home</a></li>
+        <li><a href="{{ basePath }}/calculators" class="mobile-nav-link">Calculators</a></li>
+        <li><a href="{{ basePath }}/converters" class="mobile-nav-link">Converters</a></li>
+        <li><a href="{{ basePath }}/generators" class="mobile-nav-link">Generators</a></li>
+        <li><a href="/about" class="mobile-nav-link">About</a></li>
         <li><a href="/contact" class="mobile-nav-link">Contact</a></li>
     </ul>
 </nav>
