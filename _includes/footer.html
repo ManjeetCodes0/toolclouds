@@ -1,3 +1,284 @@
-<footer>
-  <p>&copy; {{ site.time | date: "%Y" }} ToolsClouds</p>
-</footer>
+    <style>
+        /* --- General Body and Font Settings --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f3f4f6;
+        }
+
+        /* --- Main Footer Container --- */
+        .site-footer {
+            /* New dark background gradient */
+            background-image: linear-gradient(180deg, #0f1419 0%, #1a1f2e 100%);
+            color: #b8b8b8; /* Light gray text */
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid #252541;
+        }
+
+        /* Glowing top border with new gradient */
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent);
+            opacity: 0.7;
+            animation: slideGlow 5s linear infinite;
+        }
+        
+        @keyframes slideGlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .footer-container {
+            max-width: 80rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 4rem 1rem; /* Increased padding */
+        }
+
+        /* --- Footer Grid Layout --- */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 2.5rem; /* Increased gap */
+            align-items: center;
+        }
+
+        /* --- Branding & Mission Column --- */
+        .footer-branding h2 {
+            font-size: 1.6rem; 
+            line-height: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin: 0;
+            /* New text gradient effect */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-branding p {
+            color: #8892b0; /* Muted blue-gray text */
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+        
+        .footer-socials {
+            display: flex;
+            margin-top: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: #8892b0;
+            /* Enhanced transition for pop effect */
+            transition: color 0.3s ease, transform 0.3s ease;
+            margin-right: 1.25rem;
+        }
+
+        .footer-socials a:hover {
+            color: #667eea; /* Primary accent color on hover */
+            transform: translateY(-3px); /* Pop effect */
+        }
+
+        .footer-socials svg {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* --- NEW: Tool Cloud Section --- */
+        .tool-cloud-section {
+            text-align: center;
+        }
+        
+        .tool-cloud-title {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            font-weight: 600;
+            color: #6b6b8a; /* Medium gray text */
+            text-transform: uppercase;
+            letter-spacing: 0.07em; /* Wider spacing */
+            margin: 0 0 1.5rem 0;
+        }
+
+        .tool-cloud-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .tool-tag {
+            display: inline-block;
+            text-decoration: none;
+            color: #b8b8b8;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px; /* pill shape */
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .tool-tag:hover {
+            background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            transform: scale(1.1) translateY(-2px);
+            border-color: transparent;
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Different sizes for visual interest */
+        .tag-large { font-size: 1.1rem; padding: 0.6rem 1.5rem;}
+        .tag-medium { font-size: 1rem; }
+        .tag-small { font-size: 0.9rem; padding: 0.4rem 1rem;}
+
+
+        /* --- Bottom Bar (Copyright & Legal) --- */
+        .footer-bottom-bar {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #252541;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom-bar p {
+            color: #6b6b8a;
+            font-size: 0.875rem;
+            margin: 0;
+        }
+        
+        .footer-legal-links {
+            display: flex;
+            margin-top: 1rem;
+        }
+
+        .footer-legal-links a {
+            color: #6b6b8a;
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-left: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-legal-links a:first-child {
+            margin-left: 0;
+        }
+
+        .footer-legal-links a:hover {
+            color: #b8b8b8;
+        }
+
+        /* --- Responsive Design (Media Queries) --- */
+        
+        @media (min-width: 640px) {
+            .footer-container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            .footer-bottom-bar {
+                flex-direction: row;
+            }
+            .footer-legal-links {
+                margin-top: 0;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 2fr; /* 1 part branding, 2 parts tool cloud */
+                gap: 4rem;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+
+                <!-- Branding and Mission Section -->
+                <div class="footer-branding">
+                    <h2>ToolClouds.com</h2>
+                    <p>
+                        Providing fast, reliable, and easy-to-use online tools for everyday calculations, conversions, and data generation, tailored for our US users.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#">
+                            <span class="sr-only">Twitter</span>
+                            <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            </svg>
+                        </a>
+                        <a href="https://github.com/ManjeetAulakh">
+                             <span class="sr-only">GitHub</span>
+                             <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                             </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tool Cloud Section -->
+                <div class="tool-cloud-section">
+                    <h3 class="tool-cloud-title">Our Cloud of Tools</h3>
+                    <div class="tool-cloud-container">
+                        <a href="#" class="tool-tag tag-large">Health Calculators</a>
+                        <a href="#" class="tool-tag tag-medium">Password Generators</a>
+                        <a href="#" class="tool-tag tag-small">Data Converters</a>
+                        <a href="#" class="tool-tag tag-medium">Finance Calculators</a>
+                        <a href="#" class="tool-tag tag-small">Lorem Ipsum</a>
+                        <a href="#" class="tool-tag tag-large">Education Calculators</a>
+                        <a href="#" class="tool-tag tag-medium">Unit Converters</a>
+                        <a href="#" class="tool-tag tag-small">Random Numbers</a>
+                        <a href="#" class="tool-tag tag-medium">Math Calculators</a>
+                        <a href="#" class="tool-tag tag-large">Image Converters</a>
+                        <a href="#" class="tool-tag tag-small">Credit Card Generator</a>
+                        <a href="#" class="tool-tag tag-medium">Fitness Calculators</a>
+                        <a href="#" class="tool-tag tag-small">Time Converters</a>
+                        <a href="#" class="tool-tag tag-medium">Color Palette</a>
+                        <a href="#" class="tool-tag tag-large">Currency Converters</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom-bar">
+                <p>&copy; 2025 ToolClouds.com. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="/about">About</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
