@@ -1,28 +1,37 @@
 ---
 layout: default
 title: Terms and Conditions
-permalink: /terms-and-conditions
+permalink: /terms-and-conditions/
 ---
 
 <style>
-  /* V2: Professional & Minimalist Design
-    This is the same style used for the Privacy Policy page for consistency.
+  /*
+    UPDATED: This style block now uses your site's CSS variables and
+    creates a styled "wrapper" that supports both light and dark themes.
   */
   .professional-terms {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    max-width: 750px; /* Optimal width for reading text */
-    margin: 60px auto; /* More vertical space, centered horizontally */
-    padding: 0 20px;   /* Padding on the sides for mobile */
-    color: #333333; /* Primary text color */
-    line-height: 1.7;  /* Increased line height for better readability */
+    font-family: var(--font-primary, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif);
+    max-width: 800px;
+    margin: 60px auto;
+    
+    /* --- ADDED WRAPPER STYLES --- */
+    background-color: var(--color-white);
+    padding: 40px 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    transition: background-color 0.3s, border-color 0.3s;
+
+    /* --- Text and Link Styles (Updated) --- */
+    color: var(--color-body-text);
+    line-height: 1.7;
   }
 
-  /* Headings are simple, black, and separated by space, not lines or colors */
   .professional-terms h1,
   .professional-terms h2 {
     font-weight: 600;
-    color: #000000;
-    margin-top: 2.5em; /* Generous space above headings */
+    color: var(--color-heading);
+    margin-top: 2.5em;
     margin-bottom: 1em;
     line-height: 1.3;
   }
@@ -30,18 +39,18 @@ permalink: /terms-and-conditions
   .professional-terms h1 {
     font-size: 2.2em;
     margin-top: 0;
-    border-bottom: 1px solid #e0e0e0; /* A very subtle separator for the main title */
+    border-bottom: 1px solid var(--color-border);
     padding-bottom: 0.5em;
+    transition: border-color 0.3s;
   }
 
   .professional-terms h2 {
     font-size: 1.5em;
   }
 
-  /* Standard paragraph and list styling */
   .professional-terms p,
   .professional-terms li {
-    font-size: 1em; /* 16px is a common base */
+    font-size: 1em;
     margin-bottom: 1em;
   }
   
@@ -49,9 +58,8 @@ permalink: /terms-and-conditions
     padding-left: 25px;
   }
 
-  /* Links are a standard, accessible blue and are clearly identifiable */
   .professional-terms a {
-    color: #007bff;
+    color: var(--color-primary);
     text-decoration: none;
   }
 
@@ -59,10 +67,16 @@ permalink: /terms-and-conditions
     text-decoration: underline;
   }
   
-  /* Bold/strong text is just heavier, no color change */
   .professional-terms strong {
     font-weight: 600;
-    color: #000000;
+    color: var(--color-heading);
+  }
+
+  /* Responsive padding for mobile */
+  @media (max-width: 600px) {
+    .professional-terms {
+      padding: 30px 25px;
+    }
   }
 </style>
 
@@ -70,7 +84,7 @@ permalink: /terms-and-conditions
 
 # Terms and Conditions for toolclouds.com
 
-**Last Updated:** September 6, 2025
+**Last Updated:** September 7, 2025
 
 Welcome to toolclouds.com. These Terms and Conditions ("Terms") govern your use of the toolclouds.com website (the "Service") operated by us. Please read these Terms carefully before using our Service.
 
@@ -98,7 +112,7 @@ The results from our calculators, converters, and generators are for information
 
 ## 4. Limitation of Liability
 
-In no event shall toolclouds.com, nor its owners, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service. We will not be liable for any errors or omissions in the content of the Service or for any decisions made based on the information provided by our tools.
+In no event shall toolclouds.com, nor its owners, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of ofits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service. We will not be liable for any errors or omissions in the content of the Service or for any decisions made based on the information provided by our tools.
 
 ## 5. Third-Party Websites and Advertising
 

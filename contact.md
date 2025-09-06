@@ -1,34 +1,47 @@
 ---
 layout: default
 title: Contact Us
-permalink: /contact
+permalink: /contact/
 ---
 
 <style>
-  /* V2: Professional & Minimalist Design - Contact Form Extension */
+  /*
+    UPDATED: The styles now use your site's CSS variables to create
+    a theme-aware wrapper and to style all form elements for both
+    light and dark modes automatically.
+  */
   .professional-contact {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    max-width: 750px;
+    font-family: var(--font-primary, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif);
+    max-width: 800px;
     margin: 60px auto;
-    padding: 0 20px;
-    color: #333333;
+    
+    /* --- ADDED WRAPPER STYLES --- */
+    background-color: var(--color-white);
+    padding: 40px 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    transition: background-color 0.3s, border-color 0.3s;
+
+    color: var(--color-body-text);
     line-height: 1.7;
   }
   .professional-contact h1 {
     font-size: 2.2em;
     font-weight: 600;
-    color: #000000;
-    border-bottom: 1px solid #e0e0e0;
+    color: var(--color-heading);
+    border-bottom: 1px solid var(--color-border);
     padding-bottom: 0.5em;
     margin-bottom: 1em;
+    transition: border-color 0.3s;
   }
   .professional-contact p {
     font-size: 1.1em;
-    color: #555;
+    color: var(--color-secondary-text);
     margin-bottom: 2em;
   }
   
-  /* Form Specific Styles */
+  /* --- FORM STYLES (UPDATED WITH VARIABLES) --- */
   .form-group {
     margin-bottom: 1.5em;
   }
@@ -36,59 +49,80 @@ permalink: /contact
     display: block;
     font-weight: 600;
     margin-bottom: 0.5em;
-    color: #333;
+    color: var(--color-heading);
   }
   .form-group .form-control {
     width: 100%;
     padding: 12px 15px;
     font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box; /* Important */
-    transition: border-color 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--color-border);
+    border-radius: 8px; /* Slightly smaller radius for inputs */
+    box-sizing: border-box;
+    background-color: var(--color-background); /* Use page background for inputs */
+    color: var(--color-body-text);
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.3s, color 0.3s;
   }
   .form-group .form-control:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
   }
   
-  /* Button Styles */
+  /* --- BUTTON STYLES (UPDATED WITH VARIABLES) --- */
   .submit-btn {
     display: inline-block;
     width: 100%;
     padding: 15px;
     font-size: 1.1em;
     font-weight: 600;
-    color: #fff;
-    background-color: #007bff;
+    color: #FFFFFF; /* White text is best on primary color */
+    background-color: var(--color-primary);
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.2s;
   }
   .submit-btn:hover {
-    background-color: #0056b3;
+    background-color: var(--color-primary-dark);
   }
 
-  /* Success/Error Message Styles */
+  /* --- MESSAGE STYLES --- */
   .form-message {
     padding: 15px;
     margin-top: 1.5em;
     border-radius: 6px;
     text-align: center;
     font-weight: 600;
-    display: none; /* Hidden by default */
+    display: none;
+    border: 1px solid transparent;
   }
   .success {
     background-color: #d4edda;
     color: #155724;
-    border: 1px solid #c3e6cb;
+    border-color: #c3e6cb;
   }
   .error {
     background-color: #f8d7da;
     color: #721c24;
-    border: 1px solid #f5c6cb;
+    border-color: #f5c6cb;
+  }
+  /* Dark theme overrides for messages */
+  [data-theme="dark"] .success {
+    background-color: #155724;
+    color: #d4edda;
+    border-color: #2b6b3e;
+  }
+  [data-theme="dark"] .error {
+    background-color: #721c24;
+    color: #f8d7da;
+    border-color: #8c2a32;
+  }
+  
+  /* --- RESPONSIVE STYLES --- */
+  @media (max-width: 600px) {
+    .professional-contact {
+      padding: 30px 25px;
+    }
   }
 </style>
 

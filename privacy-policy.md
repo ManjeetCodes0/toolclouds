@@ -1,29 +1,30 @@
 ---
 layout: default
 title: Privacy Policy
-permalink: /privacy-policy
+permalink: /privacy-policy/
 ---
 
 <style>
-  /* V2: Professional & Minimalist Design
-    Focus is on typography, readability, and generous whitespace.
-    This mimics the style of legal pages on major tech websites.
+  /*
+    UPDATED: The hardcoded colors have been replaced with your site's
+    CSS variables. This makes the page automatically adapt to the
+    light/dark theme toggle without needing extra CSS.
   */
   .professional-policy {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    max-width: 750px; /* Optimal width for reading text */
-    margin: 60px auto; /* More vertical space, centered horizontally */
-    padding: 0 20px;   /* Padding on the sides for mobile */
-    color: #333333; /* Primary text color */
-    line-height: 1.7;  /* Increased line height for better readability */
+    font-family: var(--font-primary, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif);
+    max-width: 750px;
+    margin: 60px auto;
+    padding: 0 20px;
+    color: var(--color-body-text); /* UPDATED */
+    line-height: 1.7;
+    transition: color 0.3s; /* Added for smooth text color transition */
   }
 
-  /* Headings are simple, black, and separated by space, not lines or colors */
   .professional-policy h1,
   .professional-policy h2 {
     font-weight: 600;
-    color: #000000;
-    margin-top: 2.5em; /* Generous space above headings */
+    color: var(--color-heading); /* UPDATED */
+    margin-top: 2.5em;
     margin-bottom: 1em;
     line-height: 1.3;
   }
@@ -31,18 +32,18 @@ permalink: /privacy-policy
   .professional-policy h1 {
     font-size: 2.2em;
     margin-top: 0;
-    border-bottom: 1px solid #e0e0e0; /* A very subtle separator for the main title */
+    border-bottom: 1px solid var(--color-border); /* UPDATED */
     padding-bottom: 0.5em;
+    transition: border-color 0.3s; /* Added transition */
   }
 
   .professional-policy h2 {
     font-size: 1.5em;
   }
 
-  /* Standard paragraph and list styling */
   .professional-policy p,
   .professional-policy li {
-    font-size: 1em; /* 16px is a common base */
+    font-size: 1em;
     margin-bottom: 1em;
   }
   
@@ -50,9 +51,8 @@ permalink: /privacy-policy
     padding-left: 25px;
   }
 
-  /* Links are a standard, accessible blue and are clearly identifiable */
   .professional-policy a {
-    color: #007bff;
+    color: var(--color-primary); /* UPDATED */
     text-decoration: none;
   }
 
@@ -60,10 +60,9 @@ permalink: /privacy-policy
     text-decoration: underline;
   }
   
-  /* Bold/strong text is just heavier, no color change */
   .professional-policy strong {
     font-weight: 600;
-    color: #000000;
+    color: var(--color-heading); /* UPDATED */
   }
 </style>
 

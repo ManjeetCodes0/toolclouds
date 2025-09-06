@@ -31,7 +31,7 @@ permalink: /about
   .about-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px 20px;
   }
   
   /* Cards */
@@ -43,7 +43,7 @@ permalink: /about
   }
   
   .card {
-    background: white;
+    background: #c1caca;
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -83,7 +83,6 @@ permalink: /about
   
   /* Stats Section */
   .stats-section {
-    background: #f8f9fa;
     padding: 60px 0;
     margin: 60px 0;
   }
@@ -164,7 +163,6 @@ permalink: /about
   
   /* Values Section */
   .values-section {
-    background: white;
     padding: 60px 0;
   }
   
@@ -176,7 +174,8 @@ permalink: /about
   }
   
   .value-card:hover {
-    background: #f8f9fa;
+    background: #545a5fff;
+    color: white
   }
   
   .value-icon {
@@ -190,7 +189,6 @@ permalink: /about
     color: white;
     padding: 80px 0;
     text-align: center;
-    margin-top: 60px;
     border-radius: 20px;
   }
   
