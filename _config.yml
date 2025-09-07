@@ -9,14 +9,12 @@ collections:
     permalink: /:categories/:name/
 
 plugins:
-  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
 
 author:
   name: "ToolClouds"
   email: "manjeetsingh.codes@gmail.com"
-
 
 defaults:
   # US tools - MUST be FIRST (most specific)

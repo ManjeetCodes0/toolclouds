@@ -7,19 +7,6 @@ permalink: /us/calculators/education/gpa-calculator-asu
 description: "Calculate your ASU GPA instantly with our free Arizona State University grade calculator. Track Sun Devil semester & cumulative GPA using the official ASU grading scale with A+ through E grades."
 lang: en-US
 region: US
-tags:
-  - "gpa calculator asu"
-  - "asu gpa calculator"
-  - "arizona state university gpa"
-  - "asu grading scale"
-  - "sun devil gpa"
-  - "asu grade calculator"
-  - "tempe gpa calculator"
-  - "asu cumulative gpa"
-  - "my asu gpa"
-  - "asu gpa requirements"
-  - "arizona state grades"
-  - "asu academic standing"
 schema:
   "@context": "https://schema.org"
   "@type": "WebApplication"
