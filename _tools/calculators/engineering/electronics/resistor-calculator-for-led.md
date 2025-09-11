@@ -5,17 +5,6 @@ layout: tool
 categories: [calculators, electronics]
 permalink: /calculators/electronics/resistor-calculator-for-led
 description: "Free LED resistor calculator to find the perfect current limiting resistor for your LED circuit. Calculate resistor values, power ratings, and see circuit diagrams instantly."
-tags:
-  - "Resistor Calculator for LED"
-  - "LED Resistor Calculator"
-  - "Current Limiting Resistor"
-  - "LED Circuit Calculator"
-  - "Ohm's Law Calculator"
-  - "LED Resistance Calculator"
-  - "Electronics Calculator"
-  - "LED Power Calculator"
-  - "Series Resistor Calculator"
-  - "LED Circuit Design"
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
