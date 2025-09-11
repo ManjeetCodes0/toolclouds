@@ -3,7 +3,7 @@ title: "Voltage Divider Calculator Online: Calculate Vout and Resistor"
 localtitle: "Voltage Divider Calculator"
 layout: tool
 categories: [electricalCalc, engineeringCalc, calculators]
-permalink: /calculators/electrical/voltage-divider-calculator
+permalink: /calculators/electrical/voltage-divider-calculator-online
 description: "Free voltage divider calculator to calculate output voltage, resistor values, and voltage ratios. Features interactive circuit diagrams, load effects analysis, and practical design tips for electronics projects."
 faq:
   - q: "What is a voltage divider and how does it work?"
