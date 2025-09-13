@@ -5,14 +5,6 @@ layout: tool
 categories: [calculators, educationCalc, examsCalc]
 permalink: /calculators/education/cds-age-calculator
 description: "Check your exact age and eligibility for the upcoming CDS exams. Our tool uses the official cutoff dates for all (IMA, INA, AFA, OTA) from 2025 to 2027."
-tags:
-  - "CDS Age Calculator"
-  - "CDS Age Limit"
-  - "CDS Eligibility"
-  - "CDS 2025"
-  - "CDS 2026"
-  - "CDS 2027"
-  - "Government Exam Calculator"
 ---
 
 <style>
@@ -1337,7 +1329,7 @@ tags:
         const examResultsDiv = document.createElement('div');
         examResultsDiv.innerHTML = `
           <h4 style="margin: 25px 0 15px; font-size: 1.2rem; color: var(--cds-text-primary);">
-            ${exam.exam} ${exam.year} (Course starts: ${new Date(exam.courseStart).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })})
+            ${exam.exam} ${exam.year} 
           </h4>
         `;
 
