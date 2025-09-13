@@ -80,10 +80,10 @@ description: "Browse our comprehensive collection of free online calculators, or
             <p class="clp-card-description">Calculate time differences, ages, and important dates with ease.</p>
             <hr class="clp-card-separator">
             <ul class="clp-tool-list">
-                <li><a href="#">Age Calculator</a></li>
-                <li><a href="#">Date Difference</a></li>
-                <li><a href="#">Time Zone Converter</a></li>
-                <li><a href="#">Stopwatch</a></li>
+                {% assign education_tools = site.tools | where_exp:"item","item.categories contains 'dateTimeCalc'" %}
+                {% for tool in education_tools %}
+                <li><a href="{{ tool.url | relative_url }}">{{ tool.localtitle }}</a></li>
+                {% endfor %}
             </ul>
         </article>
 

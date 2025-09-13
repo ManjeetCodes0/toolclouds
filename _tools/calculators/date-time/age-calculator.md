@@ -1,6 +1,6 @@
 ---
 title: "Age Calculator on Date: Calculate Your Exact Age on Any Date"
-localtitle: "Age Calculator on Date"
+localtitle: "Age Calculator"
 layout: tool
 categories: [calculators, dateTimeCalc]
 permalink: /calculators/date-time/age-calculator-on-date
@@ -14,8 +14,6 @@ tags:
   - "how old was I"
   - "calculate age in days"
 ---
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <div class="ac2-wrapper">
     <style>
@@ -401,11 +399,11 @@ tags:
                 <div class="ac2-sidebar-card ac2-related-tools">
                     <h3><i class="fas fa-compass-drafting"></i>Explore Tools</h3>
                     <ul>
-                        <li><a href="#"><i class="fas fa-calendar-alt"></i> Date Difference</a></li>
-                        <li><a href="#"><i class="fas fa-clock"></i> Time Zone Converter</a></li>
+                        <li><a href="/calculators/date-time/two-date-difference-calculator"><i class="fas fa-calendar-alt"></i> Date Difference</a></li>
+                        <li><a href="/converters/date-time/time-zone-converter"><i class="fas fa-clock"></i> Time Zone Converter</a></li>
                         <li><a href="#"><i class="fas fa-hourglass-half"></i> Countdown Timer</a></li>
-                        <li><a href="#"><i class="fas fa-stopwatch"></i> Online Stopwatch</a></li>
-                        <li><a href="#"><i class="fas fa-percent"></i> Percentage Calculator</a></li>
+                        <li><a href="/calculators/date-time/stopwatch-for-study-online"><i class="fas fa-stopwatch"></i> Online Stopwatch</a></li>
+                        <li><a href="/calculators/date-time/time-duration-calculator-online-free"><i class="fas fa-clock"></i> Time Duration Caculator</a></li>
                     </ul>
                 </div>
             </aside>
