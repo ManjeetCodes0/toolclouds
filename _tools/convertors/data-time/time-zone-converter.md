@@ -232,25 +232,6 @@ faq:
         </div>
       </div>
     </main>
-    
-    {% assign related_tools = site.tools | where_exp:"item", "item.categories contains 'dateCalc' or item.categories contains 'dateTimeConv'" %}
-    {% if related_tools.size > 1 %}
-    <section class="tzc-section">
-      <h2>Related Tools</h2>
-      <div class="tzc-related-tools">
-        {% for tool in related_tools limit:4 %}
-          {% unless tool.url == page.url %}
-            <a href="{{ tool.url | relative_url }}" class="tzc-tool-link">
-              <span>{{ tool.localtitle }}</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
-          {% endunless %}
-        {% endfor %}
-      </div>
-    </section>
-    {% endif %}
 
     <section class="tzc-section tzc-content">
       <h2>How This Works</h2>
