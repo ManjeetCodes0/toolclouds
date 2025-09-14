@@ -2,7 +2,7 @@
 title: "Free BMI Calculator - Check Your Body Mass Index"
 localtitle: "BMI Calculator"
 layout: tool
-categories: [calculators, health]
+categories: [calculators, healthCalc]
 permalink: /calculators/health/bmi-calculator
 description: "Instantly check your Body Mass Index with our free BMI Calculator (2025). Enter your weight and height to find your BMI and see where you fall on the health chart."
 tags:

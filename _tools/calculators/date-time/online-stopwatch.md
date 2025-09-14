@@ -392,7 +392,7 @@ faq:
   .sw-content {
     background: var(--sw-surface);
     border-radius: 24px;
-    padding: 3rem;
+    padding: 1rem 1rem;
     margin-bottom: 3rem;
     border: 1px solid var(--sw-border);
   }
@@ -487,7 +487,7 @@ faq:
     }
     
     .sw-fullscreen .sw-time-display {
-      font-size: 5rem;
+      font-size: 3.8rem;
     }
     
     .sw-fullscreen .sw-btn {
@@ -530,7 +530,6 @@ faq:
   .sw-faq-container {
     background: var(--sw-surface);
     border-radius: 24px;
-    padding: 2rem;
     border: 1px solid var(--sw-border);
   }
   

@@ -35,6 +35,10 @@ description: "Browse our comprehensive collection of free online calculators, or
             <p class="clp-card-description">Solve complex mathematical problems with our advanced calculators.</p>
             <hr class="clp-card-separator">
             <ul class="clp-tool-list">
+                {% assign education_tools = site.tools | where_exp:"item","item.categories contains 'mathCalc'" %}
+                {% for tool in education_tools %}
+                <li><a href="{{ tool.url | relative_url }}">{{ tool.localtitle }}</a></li>
+                {% endfor %}
                 <li><a href="#">Scientific Calculator</a></li>
                 <li><a href="#">Algebra Calculator</a></li>
                 <li><a href="#">Geometry Calculator</a></li>
@@ -50,7 +54,7 @@ description: "Browse our comprehensive collection of free online calculators, or
             <p class="clp-card-description">Monitor your health and fitness goals with these calculators.</p>
             <hr class="clp-card-separator">
             <ul class="clp-tool-list">
-                {% assign health_tools = site.tools | where_exp:"item","item.categories contains 'health'" %}
+                {% assign health_tools = site.tools | where_exp:"item","item.categories contains 'healthCalc'" %}
                 {% for tool in health_tools %}
                 <li><a href="{{ tool.url | relative_url }}">{{ tool.localtitle }}</a></li>
                 {% endfor %}
